@@ -80,6 +80,8 @@ U 盘、移动硬盘在 Mac 上用过，会留下 `.DS_Store`、`._xxx`、`.Spot
 
 ## 安装
 
+[**下载最新版 →**](https://github.com/dungeonlee/QuadCut/releases/latest)
+
 **系统要求**：macOS 13 Ventura 或更新，Apple Silicon（M 系列）。目前只发布 arm64 版本。
 
 1. 下载后把 `QuadCut.app` 拖进「应用程序」

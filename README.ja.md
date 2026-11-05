@@ -80,6 +80,8 @@ USB メモリやポータブル HDD を Mac で使うと、`.DS_Store`、`._xxx`
 
 ## インストール
 
+[**最新版をダウンロード →**](https://github.com/dungeonlee/QuadCut/releases/latest)
+
 **動作環境**：macOS 13 Ventura 以降、Apple Silicon（M シリーズ）。現在は arm64 版のみ配布しています。
 
 1. ダウンロードした `QuadCut.app` を「アプリケーション」へドラッグ

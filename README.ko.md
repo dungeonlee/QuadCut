@@ -80,6 +80,8 @@ USB 메모리나 외장 하드를 Mac에서 쓰면 `.DS_Store`, `._xxx`, `.Spotl
 
 ## 설치
 
+[**최신 버전 다운로드 →**](https://github.com/dungeonlee/QuadCut/releases/latest)
+
 **요구 사항**: macOS 13 Ventura 이상, Apple Silicon(M 시리즈). 현재는 arm64 빌드만 배포합니다.
 
 1. 내려받은 `QuadCut.app`을 "응용 프로그램"으로 끌어다 놓습니다.

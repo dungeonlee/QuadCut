@@ -80,6 +80,8 @@ Type a letter or a digit and jump straight to the item starting with it; Chinese
 
 ## Installation
 
+[**Download the latest version →**](https://github.com/dungeonlee/QuadCut/releases/latest)
+
 **Requirements**: macOS 13 Ventura or later, Apple Silicon (M series). Only the arm64 build is published for now.
 
 1. Download and drag `QuadCut.app` into Applications.

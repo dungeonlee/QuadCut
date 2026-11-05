@@ -80,6 +80,8 @@ USB 隨身碟、行動硬碟在 Mac 上用過，會留下 `.DS_Store`、`._xxx`�
 
 ## 安裝
 
+[**下載最新版 →**](https://github.com/dungeonlee/QuadCut/releases/latest)
+
 **系統需求**：macOS 13 Ventura 或更新，Apple Silicon（M 系列）。目前只發佈 arm64 版本。
 
 1. 下載後把 `QuadCut.app` 拖進「應用程式」
