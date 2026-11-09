@@ -40,6 +40,12 @@ Select a photo and the status bar shows shutter, ISO, aperture and dimensions; t
 
 Select an image made by ComfyUI or A1111 and the model, steps, CFG, sampler and prompt are read straight out, with one button to copy the whole thing.
 
+## One Click to Expand
+
+![One click to expand](docs-maximize.png)
+
+Suddenly need to focus on a single folder? Click to expand and you get all the room you need. Each pane has a faint little dot in its top-right corner — click it and that pane fills the whole workspace while the others collapse into a narrow strip. Click the dot again, or click any strip, and everything returns exactly to how it was. When you're grinding through one folder among many, you don't have to rearrange the layout or remember where you dragged things.
+
 ## Batch rename
 
 ![Batch rename](docs-batchrename.png)
@@ -107,6 +113,7 @@ Type a letter or a digit and jump straight to the item starting with it; Chinese
 | Move to Trash        | `Del` (PC key) / `⌘⌫`                       |
 | New folder           | `⇧⌘N`                                       |
 | Rename / batch rename | `F2`                                       |
+| Maximize / restore pane | `F1`                                     |
 | Get Info             | `⌘R` / `⌥R`                                 |
 | Undo / redo          | `⌘Z` / `⇧⌘Z`                                |
 | Select all / invert  | `⌘A` / `⇧⌘I`                                |
@@ -123,6 +130,8 @@ Type a letter or a digit and jump straight to the item starting with it; Chinese
 | Open Terminal here   | `⌃⌘T`                                       |
 
 Keys are assigned by **what is printed on the keycap**, not by copying Windows physical positions — PC and Mac keyboards both line up: go up is `Tab`, delete is `Del` / `⌘⌫`.
+
+**Two shortcut sets, switchable**: under “Edit → Shortcuts” you can pick **Classic** (the default, i.e. the table above) or **Mac Default**. The latter hands `F1` `F2` `F5` `Tab` — every key macOS already defines — back to the system and uses `⌘↑` to go up, `Return` to rename, `⌘I / ⌥I` for Get Info, `⌘R` to refresh and `⌥⌘F` to maximize. Switch to it if you're on a built-in laptop keyboard and don't want to fight the brightness or dictation keys. The change takes effect immediately, no restart.
 
 ---
 
