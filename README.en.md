@@ -12,6 +12,8 @@ So QuadCut exists — a photo- and image-friendly multi-pane file manager, built
 
 Beyond everyday file handling, it lends a hand with photos and AI images: it reads out ISO, shutter speed and aperture on its own, and recognises and displays the model, sampler and prompt of AI images (ComfyUI). Two colour themes, five UI languages.
 
+For what changed in each release, see the [changelog](CHANGELOG.md) (Chinese and English).
+
 ---
 
 ## Four panes, four layouts
