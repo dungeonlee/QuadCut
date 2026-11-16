@@ -1,12 +1,18 @@
-# 更新日志
+# 更新日志 / Changelog
 
 只记对外发布的版本。QuadCut 从 1.8.1 才开始发布，之前的开发过程没有公开版本。
 
-格式很朴素：一个版本一段，先说这一版有哪些值得知道的变化。安装包见 Release 附件。
+Only released versions are listed. QuadCut's first public release was 1.8.1; nothing before that was ever published.
+
+每个版本先中文、后 English，条目一一对应。安装包见对应 Release 的附件。
+
+Each version is given in Chinese first, then in English, entry by entry. Installers are attached to the corresponding Release.
 
 ---
 
 ## 1.8.4.1 — 2026-11-16
+
+### 中文
 
 **内存**
 
@@ -23,9 +29,28 @@
 - 安装包文件名带架构标识：`QuadCut-1.8.4.1-arm64.dmg`。本程序只支持 Apple Silicon（arm64），Intel Mac 打不开
 - 五份 README 的快捷键表拆成「特色 / Mac 默认」两列，逐条对照
 
+### English
+
+**Memory**
+
+- The 100% loupe cache is now shared by all four panes and keeps at most 3 images (it used to hold 6 with a 512 MB cap, which could still push resident memory to around 300 MB)
+- Once the loupe is dismissed, the cache is released after 60 seconds idle — previously, images you had looked at stayed in memory until you quit the app
+- The thumbnail memory cache is capped at 128 MB (the old 256 MB cap was never reached, so eviction never kicked in)
+
+**Fixed**
+
+- A middle-click-pinned 100% preview disappeared as soon as the pointer left the preview sidebar. Moving the mouse is not an action — only another click should dismiss it
+
+**Other**
+
+- The installer filename now carries the architecture: `QuadCut-1.8.4.1-arm64.dmg`. The app supports Apple Silicon (arm64) only; it will not open on an Intel Mac
+- The shortcut tables in all five READMEs are split into "Featured / Mac defaults" columns, for line-by-line comparison
+
 ---
 
 ## 1.8.4 — 2026-11-12
+
+### 中文
 
 图里明明存着参数，为什么读不出来？这一版把 AI 图片的解析重新做了一遍：不再猜节点叫什么名字，而是从出图节点顺着连线往上游走。
 
@@ -44,9 +69,30 @@
 
 - 图标网格模式显示真实缩略图（以前只有大缩略图模式才有）；滚动时先给系统图标，停手后自动补上
 
+### English
+
+The parameters were stored in the image — why couldn't we read them? This release rebuilds AI image parsing: instead of guessing what a node is called, it walks upstream along the actual links, starting from the output node.
+
+**AI images**
+
+- Multiple samplers in one graph no longer come down to luck (back when a sketch and a refine pass each had their own sampler, steps would read 5 one time and 8 the next)
+- New-style workflows such as `SamplerCustomAdvanced` now work: positive and negative hang off the `guider`, not the sampler
+- Pass-through nodes are traversed all the way — `Any Switch`, `showAnything`, `CR Text`, `Text Concatenate` — instead of accepting only a few fixed input names
+- When a pass-through node feeds in both an index and the real text, the longest segment wins, so a bare number no longer shows up as the prompt
+- If the chain only holds an edit instruction (inpainting and the like), the separately stored full scene description is used instead
+- The main model follows the sampler's model chain, so with two UNETLoaders in the graph it still picks the one that actually rendered the image
+- When positive and negative point at the same encoder, negative is left empty instead of duplicating positive
+- Bypassed and muted nodes are skipped, notes are skipped, and tags guessed by a captioning model are never mistaken for the prompt
+
+**File management**
+
+- Icon grid mode now shows real thumbnails (previously only large-thumbnail mode did); while scrolling it shows system icons first and fills in the real ones once you stop
+
 ---
 
 ## 1.8.3 — 2026-11-09
+
+### 中文
 
 当我意识到很多只使用 Mac 键盘的人使用该软件的这套快捷键会存在冲突的时候，我决定使用两套快捷键系统。和我一样使用 Mac mini、甚至同样使用 Win/Mac 二合一键盘的人可以保持原样，只使用 Mac 键盘的用户可以选择 Mac 默认快捷键。
 
@@ -73,9 +119,38 @@
 - 修：鼠标停在窄条上时，格子自己的工具条和滚动条会透过封面显示出来
 - 修：切换快捷键套之后，侧边栏的速查表要等切一次界面语言才更新
 
+### English
+
+Once I realized that people who use a Mac keyboard only would run into conflicts with this shortcut set, I decided to ship two sets. Mac mini users like me — or anyone else on a combined Windows/Mac keyboard — can keep the original set; Mac-keyboard-only users can switch to Mac defaults.
+
+**Zoom one pane**
+
+- A zoom icon in each pane's top-right corner: click it and that pane takes over the whole workspace while the others collapse into a narrow strip on the right
+- Click the icon again, or click any strip, to restore exactly the pre-zoom layout; `F1` does the same
+- The remaining panes become 26 pt strips — two panes give two segments, three give three — each showing its folder name vertically
+- Restoring is pixel-exact: the animation only ever touches frames; the four-pane ratios are never recalculated
+
+**Two shortcut sets**
+
+- Switch under "Edit → Shortcuts": **Featured** (default, Windows feel) / **Mac defaults**
+- The Mac set hands `F1` `F2` `F5` `Tab` — every key that Apple keyboards define — back to the system, and uses `⌘↑` up one level, `Return` rename, `⌘I` / `⌥I` Get Info, `⌘R` refresh, `⌥⌘F` maximize. Letter and number quick-index keys are the same in both sets
+- Switching takes effect immediately: menu key equivalents and the sidebar cheat sheet update together
+
+**Other**
+
+- The shortcut bar can move to the right as a whole ("View → Shortcut bar on the right"), and the menu title flips to "left" accordingly
+- The sidebar cheat sheet now lists `F1` maximize
+- Rename and batch rename are disabled in application folders (`/Applications`, `~/Applications`, etc.) — renaming a `.app` breaks it
+- Fixed: in the green theme on a light system appearance, the zoom icon was pale grey and nearly invisible, and turned blue once clicked
+- Fixed: in system dark mode the zoom icon likewise turned blue on hover or after clicking
+- Fixed: hovering a narrow strip let the pane's own toolbar and scrollers show through the cover
+- Fixed: after switching shortcut sets, the sidebar cheat sheet only updated after switching the UI language once
+
 ---
 
 ## 1.8.2 — 2026-11-05
+
+### 中文
 
 **文件管理**
 
@@ -92,9 +167,28 @@
 
 - 关于窗口底部加上 macOS 与 Windows 两个下载地址，可以直接点开
 
+### English
+
+**File management**
+
+- After you delete a file in list view, the selection lands on the item that fills the gap, so the arrow keys keep working without scrolling back to find it
+- Layouts are now saved by name: "File → Save Layout…" (`⌘S`) asks only for a name, and the "Load Layout" submenu lists them directly; the pane arrangement is stored too
+- New tab (`⌘T`) duplicates the current tab's folder, so you continue from where you are
+- Clicking an alias or symlink that points to a folder opens it in the pane instead of popping up a Finder window
+
+**Photos**
+
+- Rotation moved to the "Edit" menu. It is greyed out when the current selection's type can't be rotated (RAW / PNG / folders)
+
+**Other**
+
+- Download links for macOS and Windows were added at the bottom of the About window; both can be clicked
+
 ---
 
 ## 1.8.1 — 2026-10-29
+
+### 中文
 
 首个公开版本。
 
@@ -133,3 +227,43 @@
 
 - macOS 13 Ventura 或更新，Apple Silicon
 - 未经 Apple 开发者签名，首次打开若提示「已损坏」，在终端执行一次 `xattr -cr /Applications/QuadCut.app`
+
+### English
+
+First public release.
+
+**File management**
+
+- Four panes, four layouts (2×2 / two side by side / two on top plus one below / one left plus two right), switchable at any time
+- Cut is real cut: `⌘X` marks, `⌘V` moves — it does not copy
+- Tabs, up to 6 per pane: drag to reorder, move across panes, or drop onto the sidebar to create a bookmark
+- Three view modes: detailed list / icon grid / large thumbnails
+- Search (`⌘F`) the current folder and its subfolders, with `*` and `?` wildcards
+- Undo and redo: rename, new folder, rotate, color tag, delete, move and copy within a volume
+- Reopen closed tabs (`⇧⌘T`)
+- Color tags and filtering, sharing the same data as Finder
+- Sidebar bookmarks, path bar, Get Info, invert selection, open Terminal here (`⌃⌘T`)
+
+**Photos**
+
+- Hold `⌃` / `⌥` or press the middle mouse button for a 100% loupe on a detail, for quick focus checking
+- Selecting a photo shows shutter speed, ISO, aperture, lens, focal length and capture time in the status bar and preview pane
+- Images only, sorted by capture time
+- Rotate (JPG / HEIC / TIFF): EXIF orientation only, no re-encoding, undoable
+
+**AI images**
+
+- Read model, LoRA, steps, CFG, sampler, scheduler and prompt from ComfyUI / A1111 images, with one-click copy
+
+**Other**
+
+- Batch rename (`F2`) with `PIC##` auto-numbering — all or nothing
+- External drive cleanup: remove `.DS_Store`, `._xxx`, `.Spotlight-V100` and similar macOS extras in one go, then eject
+- Five UI languages (Simplified Chinese / Traditional Chinese / English / Japanese / Korean), picked from the system language on first launch
+- Two appearances: follow system, and green
+- Keys are assigned by what is printed on the keycap, so both Windows and Mac keyboards line up (`Tab` up one level, `Del` / `⌘⌫` delete)
+
+**Install**
+
+- macOS 13 Ventura or later, Apple Silicon
+- Not signed with an Apple developer certificate. If macOS reports the app "is damaged" on first launch, run `xattr -cr /Applications/QuadCut.app` once in Terminal
