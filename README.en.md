@@ -88,7 +88,7 @@ Type a letter or a digit and jump straight to the item starting with it; Chinese
 
 [**Download the latest version →**](https://github.com/dungeonlee/QuadCut/releases/latest)
 
-**Requirements**: macOS 13 Ventura or later, Apple Silicon (M series). Only the arm64 build is published for now.
+**Requirements**: macOS 13 Ventura or later, Apple Silicon (M series). Only the arm64 build is published — the file name carries `arm64`, and it **will not run on an Intel Mac**, so check your machine before downloading.
 
 1. Download and drag `QuadCut.app` into Applications.
 2. If the first launch says "QuadCut is damaged and can't be opened" — that is because the app is not signed with an Apple Developer certificate; the app itself is fine. Open Terminal and run once:
@@ -102,36 +102,40 @@ Type a letter or a digit and jump straight to the item starting with it; Chinese
 
 ## Shortcuts
 
-| Action               | Shortcut                                    |
-| -------------------- | ------------------------------------------- |
-| Go up                | `Tab` (or `⌘↑`)                             |
-| Open selection       | `Return` / `⌘↓` / double-click               |
-| Back / forward       | `⌘[` / `⌘]`                                 |
-| Refresh              | `F5`                                        |
-| Cut / copy / paste   | `⌘X` / `⌘C` / `⌘V`                          |
-| Duplicate            | `⌘D`                                        |
-| Move to Trash        | `Del` (PC key) / `⌘⌫`                       |
-| New folder           | `⇧⌘N`                                       |
-| Rename / batch rename | `F2`                                       |
-| Maximize / restore pane | `F1`                                     |
-| Get Info             | `⌘R` / `⌥R`                                 |
-| Undo / redo          | `⌘Z` / `⇧⌘Z`                                |
-| Select all / invert  | `⌘A` / `⇧⌘I`                                |
-| Show hidden files    | `⌘⇧.`                                       |
-| Search               | `⌘F`                                        |
-| Focus address bar    | `⌘L`                                        |
-| Switch to pane 1–4   | `⌘1`–`⌘4`                                   |
-| Switch view          | `⌥⌘1` list / `⌥⌘2` icons / `⌥⌘3` thumbnails  |
-| New / cycle tab      | `⌘T` / `⌃Tab`, `⌃⇧Tab`                      |
-| Reopen closed tab    | `⇧⌘T`                                       |
-| Quick Look           | `Space`                                     |
-| Jump by first letter | bare `A`–`Z`, `0`–`9`                       |
-| 100% loupe           | hover the preview, `⌃` / `⌥` / middle click |
-| Open Terminal here   | `⌃⌘T`                                       |
+| Action               | Classic (default)                           | Mac Default                  |
+| -------------------- | ------------------------------------------- | ---------------------------- |
+| Go up                | `Tab` (or `⌘↑`)                             | `⌘↑`                         |
+| Open selection       | `Return` / `⌘↓` / double-click               | `⌘↓` / double-click          |
+| Back / forward       | `⌘[` / `⌘]`                                 | same                         |
+| Refresh              | `F5`                                        | `⌘R`                         |
+| Cut / copy / paste   | `⌘X` / `⌘C` / `⌘V`                          | same                         |
+| Duplicate            | `⌘D`                                        | same                         |
+| Move to Trash        | `Del` (PC key) / `⌘⌫`                       | `⌘⌫`                         |
+| New folder           | `⇧⌘N`                                       | same                         |
+| Rename / batch rename | `F2`                                       | `Return`                     |
+| Maximize / restore pane | `F1`                                     | `⌥⌘F`                        |
+| Get Info             | `⌘R` / `⌥R`                                 | `⌘I` / `⌥I`                  |
+| Undo / redo          | `⌘Z` / `⇧⌘Z`                                | same                         |
+| Select all / invert  | `⌘A` / `⇧⌘I`                                | same                         |
+| Show hidden files    | `⌘⇧.`                                       | same                         |
+| Search               | `⌘F`                                        | same                         |
+| Focus address bar    | `⌘L`                                        | same                         |
+| Switch to pane 1–4   | `⌘1`–`⌘4`                                   | same                         |
+| Switch view          | `⌥⌘1` list / `⌥⌘2` icons / `⌥⌘3` thumbnails  | same                         |
+| New / cycle tab      | `⌘T` / `⌃Tab`, `⌃⇧Tab`                      | same                         |
+| Reopen closed tab    | `⇧⌘T`                                       | same                         |
+| Quick Look           | `Space`                                     | same                         |
+| Jump by first letter | bare `A`–`Z`, `0`–`9`                       | same                         |
+| 100% loupe           | hover the preview, `⌃` / `⌥` / middle click | same                         |
+| Open Terminal here   | `⌃⌘T`                                       | same                         |
+
+These two columns are **not two builds** — it's one app with two key layouts, switchable at any time.
 
 Keys are assigned by **what is printed on the keycap**, not by copying Windows physical positions — PC and Mac keyboards both line up: go up is `Tab`, delete is `Del` / `⌘⌫`.
 
-**Two shortcut sets, switchable**: under “Edit → Shortcuts” you can pick **Classic** (the default, i.e. the table above) or **Mac Default**. The latter hands `F1` `F2` `F5` `Tab` — every key macOS already defines — back to the system and uses `⌘↑` to go up, `Return` to rename, `⌘I / ⌥I` for Get Info, `⌘R` to refresh and `⌥⌘F` to maximize. Switch to it if you're on a built-in laptop keyboard and don't want to fight the brightness or dictation keys. The change takes effect immediately, no restart.
+**How to switch**: “Edit → Shortcuts”, then pick **Classic** (default) or **Mac Default**. Takes effect immediately, no restart.
+
+**Why two sets**: on an Apple keyboard `F1` / `F2` are screen brightness, `F5` is dictation, `Tab` moves focus, and ⌦ has no physical key on a laptop at all. Classic uses all of them (Windows muscle memory), which clashes on a built-in MacBook keyboard — so Mac Default hands them back to the system and follows Finder instead: `⌘↑` to go up, `Return` to rename, `⌘I` for Get Info, `⌘R` to refresh, `⌥⌘F` to maximize. On a Mac mini, desktop or a combined Win/Mac keyboard, just stay on Classic.
 
 ---
 
