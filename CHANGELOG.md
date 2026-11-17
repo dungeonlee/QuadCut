@@ -10,6 +10,22 @@ Each version is given in Chinese first, then in English, entry by entry. Install
 
 ---
 
+## 1.8.4.2 — 2026-11-17
+
+### 中文
+
+**修**
+
+- 在一格看图片预览，点另一格继续干活，原来那格的预览会退回文件夹图标 —— 现在切格只取消高亮，正在看的那张图留住；本格点空白仍然回到文件夹预览
+
+### English
+
+**Fixed**
+
+- Looking at an image preview in one pane and then clicking another pane to carry on working made that preview fall back to the folder icon — switching panes now only clears the highlight and keeps the image you were looking at; clicking empty space in the same pane still returns to the folder preview
+
+---
+
 ## 1.8.4.1 — 2026-11-16
 
 ### 中文
