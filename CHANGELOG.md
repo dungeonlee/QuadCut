@@ -10,6 +10,42 @@ Each version is given in Chinese first, then in English, entry by entry. Install
 
 ---
 
+## 1.8.5 — 2026-11-24
+
+### 中文
+
+**新**
+
+- 把格子里的文件夹拖到**地址栏**或**标签栏**，就在本格末尾开一个新标签；满 6 个时给出禁止光标，不会“放下了没反应”
+
+**AI 图**
+
+- 图里存着裸 `NaN` 时（自定义节点写的这种值），以前整张图的参数一个都读不出来 —— 现在照样能读
+- 分段双采样（正向被 `ConditioningCombine` / `ConditioningSetTimestepRange` 包一层）也能读出正向提示词，负向不再抄一份正向
+- PNG 文本块先按 UTF-8 解，中文提示词不再变乱码
+
+**修**
+
+- 切显示方式（详细列表 / 图标网格 / 大缩略图）会丢选中、预览退回文件夹图标、焦点停在按钮上、深目录跳回顶部 —— 现在选中、预览、键盘焦点、位置都跟着走
+
+### English
+
+**New**
+
+- Drag a folder from a pane onto the **address bar** or the **tab strip** and it opens as a new tab at the end of that pane; when the pane already has 6 tabs the cursor shows "not allowed" instead of silently doing nothing
+
+**AI images**
+
+- Images whose metadata contains a bare `NaN` (some custom nodes write it) used to yield no parameters at all — they now read normally
+- Staged double sampling (where the positive prompt is wrapped in `ConditioningCombine` / `ConditioningSetTimestepRange`) now yields the positive prompt too, and the negative no longer copies it
+- PNG text chunks are decoded as UTF-8 first, so Chinese prompts no longer come out garbled
+
+**Fixed**
+
+- Switching view mode (detailed list / icon grid / large thumbnails) lost the selection, dropped the preview back to a folder icon, left keyboard focus on the toolbar button and jumped deep folders back to the top — selection, preview, focus and position now all carry over
+
+---
+
 ## 1.8.4.2 — 2026-11-17
 
 ### 中文
