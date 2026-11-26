@@ -10,6 +10,22 @@ Each version is given in Chinese first, then in English, entry by entry. Install
 
 ---
 
+## 1.8.5.1 — 2026-11-26
+
+### 中文
+
+**修**
+
+- 亮色模式下预览侧栏整块发灰（用的是深色那份底色，系统自动切换深浅色后没重算）—— 现在底色随界面实时计算，不再留旧色
+
+### English
+
+**Fixed**
+
+- In light mode the preview sidebar showed up as a solid grey block — it kept the dark-mode surface colour after the system switched appearance. The surface colour is now computed at draw time, so no stale colour can be left behind
+
+---
+
 ## 1.8.5 — 2026-11-24
 
 ### 中文
